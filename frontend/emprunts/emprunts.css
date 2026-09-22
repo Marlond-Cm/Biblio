@@ -1,0 +1,882 @@
+:root {
+    --couleur-principale: #2563eb;
+    --couleur-principale-hover: #1d4ed8;
+    --couleur-secondaire: #0f172a;
+
+    --couleur-succes: #16a34a;
+    --couleur-danger: #dc2626;
+    --couleur-warning: #d97706;
+
+    --couleur-fond: #f1f5f9;
+    --couleur-surface: #ffffff;
+    --couleur-bordure: #e2e8f0;
+
+    --couleur-texte: #0f172a;
+    --couleur-texte-secondaire: #64748b;
+
+    --ombre-legere: 0 2px 8px rgba(15, 23, 42, 0.08);
+    --ombre-moyenne: 0 8px 24px rgba(15, 23, 42, 0.10);
+
+    --rayon: 10px;
+    --transition: 0.2s ease;
+}
+
+
+/* =========================
+CONTENU PRINCIPAL
+========================= */
+
+main {
+    width: min(1400px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    padding: 40px 0 60px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+
+
+}
+
+/* =========================
+SECTIONS
+========================= */
+
+main > section {
+    padding: 28px;
+
+    background-color: var(--couleur-surface);
+
+    border: 1px solid var(--couleur-bordure);
+    border-radius: var(--rayon);
+
+    box-shadow: var(--ombre-legere);
+
+
+}
+
+main > section:first-child {
+    padding: 0 4px;
+
+    background-color: transparent;
+
+    border: 0;
+
+    box-shadow: none;
+
+
+}
+
+main section h2 {
+    margin: 0 0 20px;
+
+    color: var(--couleur-texte);
+
+    font-size: 20px;
+    font-weight: 700;
+
+    line-height: 1.3;
+
+
+}
+
+main > section:first-child h2 {
+    margin-bottom: 14px;
+
+    font-size: 28px;
+
+    letter-spacing: -0.5px;
+
+
+}
+
+/* =========================
+MESSAGES
+========================= */
+
+#message {
+    min-height: 0;
+
+    padding: 0;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        padding var(--transition),
+        margin var(--transition);
+
+
+}
+
+#message.success {
+    margin-top: 12px;
+
+    padding: 12px 15px;
+
+    color: #166534;
+
+    background-color: #dcfce7;
+
+    border: 1px solid #bbf7d0;
+
+
+}
+
+#message.error {
+    margin-top: 12px;
+
+    padding: 12px 15px;
+
+    color: #991b1b;
+
+    background-color: #fee2e2;
+
+    border: 1px solid #fecaca;
+
+
+}
+
+/* =========================
+FORMULAIRE EMPRUNT
+========================= */
+
+#empruntForm {
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 1fr)
+        minmax(220px, 1.3fr)
+        minmax(180px, 0.9fr)
+        auto;
+
+    align-items: end;
+
+    gap: 18px;
+
+
+}
+
+#empruntForm > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+
+}
+
+#empruntForm label {
+    color: var(--couleur-texte);
+
+    font-size: 14px;
+    font-weight: 600;
+
+
+}
+
+/* =========================
+SELECT / DATE
+========================= */
+
+#empruntForm select,
+#dateRetourPrevue {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 13px;
+
+    color: var(--couleur-texte);
+    background-color: var(--couleur-surface);
+
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background-color var(--transition);
+
+
+}
+
+#empruntForm select:hover,
+#dateRetourPrevue:hover {
+    border-color: #cbd5e1;
+}
+
+#empruntForm select:focus,
+#dateRetourPrevue:focus {
+    border-color: var(--couleur-principale);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+
+
+}
+
+#empruntForm select:invalid {
+    color: var(--couleur-texte-secondaire);
+    }
+
+/* =========================
+BOUTONS
+========================= */
+
+button {
+    min-height: 44px;
+
+    padding: 0 16px;
+
+    color: var(--couleur-texte);
+
+    background-color: #f8fafc;
+
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color var(--transition),
+        background-color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        transform var(--transition);
+
+
+}
+
+button:hover {
+    background-color: #e2e8f0;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:focus-visible {
+    outline: 2px solid var(--couleur-principale);
+
+    outline-offset: 2px;
+
+
+}
+
+/* =========================
+BOUTON ENREGISTRER
+========================= */
+
+#empruntForm button[type="submit"] {
+    color: var(--couleur-surface);
+
+    background-color: var(--couleur-principale);
+
+    border-color: var(--couleur-principale);
+
+    white-space: nowrap;
+
+
+}
+
+#empruntForm button[type="submit"]:hover {
+    background-color: var(--couleur-principale-hover);
+
+    border-color: var(--couleur-principale-hover);
+
+    box-shadow:
+        0 4px 10px rgba(37, 99, 235, 0.20);
+
+
+}
+
+/* =========================
+FILTRES
+========================= */
+
+main > section:nth-child(3) {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+
+}
+
+main > section:nth-child(3) h2 {
+    width: 100%;
+
+    margin-bottom: 4px;
+
+
+}
+
+#allButton,
+#currentButton,
+#overdueButton {
+    min-height: 40px;
+}
+
+/* Filtre Tous */
+
+#allButton {
+    color: var(--couleur-principale);
+
+    background-color: #eff6ff;
+
+    border-color: #bfdbfe;
+
+
+}
+
+#allButton:hover {
+    color: var(--couleur-surface);
+
+    background-color: var(--couleur-principale);
+
+    border-color: var(--couleur-principale);
+
+
+}
+
+/* Filtre en cours */
+
+#currentButton {
+    color: #166534;
+
+    background-color: #f0fdf4;
+
+    border-color: #bbf7d0;
+
+
+}
+
+#currentButton:hover {
+    color: var(--couleur-surface);
+
+    background-color: var(--couleur-succes);
+
+    border-color: var(--couleur-succes);
+
+
+}
+
+/* Filtre en retard */
+
+#overdueButton {
+    color: #92400e;
+
+    background-color: #fffbeb;
+
+    border-color: #fde68a;
+
+
+}
+
+#overdueButton:hover {
+    color: var(--couleur-surface);
+
+    background-color: var(--couleur-warning);
+
+    border-color: var(--couleur-warning);
+
+
+}
+
+/* =========================
+CHARGEMENT
+========================= */
+
+#loading {
+    margin-bottom: 14px;
+
+    color: var(--couleur-texte-secondaire);
+
+    font-size: 14px;
+
+
+}
+
+/* =========================
+TABLEAU
+========================= */
+
+main > section:last-child {
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 14px;
+
+
+}
+
+thead {
+    background-color: #f8fafc;
+}
+
+th {
+    padding: 13px 14px;
+
+    color: var(--couleur-texte-secondaire);
+
+    border-bottom: 1px solid var(--couleur-bordure);
+
+    text-align: left;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.04em;
+
+    white-space: nowrap;
+
+
+}
+
+td {
+    padding: 14px;
+
+    color: var(--couleur-texte);
+
+    border-bottom: 1px solid var(--couleur-bordure);
+
+    vertical-align: middle;
+
+
+}
+
+tbody tr {
+    transition:
+    background-color var(--transition);
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* =========================
+STATUTS DES EMPRUNTS
+========================= */
+
+.emprunt-en-cours td:nth-child(8) {
+    color: #166534;
+
+    font-weight: 600;
+
+
+}
+
+.emprunt-en-cours td:nth-child(8)::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 7px;
+
+    background-color: var(--couleur-succes);
+
+    border-radius: 50%;
+
+
+}
+
+.emprunt-retard {
+    background-color: #fffaf5;
+}
+
+.emprunt-retard:hover {
+    background-color: #fff7ed;
+}
+
+.emprunt-retard td:nth-child(8) {
+    color: #b45309;
+
+    font-weight: 700;
+
+
+}
+
+.emprunt-retard td:nth-child(8)::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 7px;
+
+    background-color: var(--couleur-warning);
+
+    border-radius: 50%;
+
+
+}
+
+.emprunt-retourne td:nth-child(8) {
+    color: var(--couleur-texte-secondaire);
+
+    font-weight: 600;
+
+
+}
+
+.emprunt-retourne td:nth-child(8)::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-right: 7px;
+
+    background-color: #94a3b8;
+
+    border-radius: 50%;
+
+
+}
+
+/* =========================
+ACTION RETOURNER
+========================= */
+
+td:last-child {
+    white-space: nowrap;
+}
+
+td:last-child button {
+    min-height: 36px;
+
+    padding: 0 12px;
+
+    color: var(--couleur-surface);
+
+    background-color: var(--couleur-principale);
+
+    border-color: var(--couleur-principale);
+
+    font-size: 13px;
+
+
+}
+
+td:last-child button:hover {
+    background-color: var(--couleur-principale-hover);
+
+    border-color: var(--couleur-principale-hover);
+
+    box-shadow:
+        0 3px 8px rgba(37, 99, 235, 0.18);
+
+
+}
+
+td:last-child span {
+    color: var(--couleur-texte-secondaire);
+
+    font-size: 13px;
+    font-weight: 600;
+
+
+}
+
+/* =========================
+LIGNE VIDE
+========================= */
+
+tbody tr td[colspan] {
+    padding: 32px 16px;
+
+    color: var(--couleur-texte-secondaire);
+
+    text-align: center;
+
+    font-style: italic;
+
+
+}
+
+/* =========================
+1440 PX — ORDINATEUR
+========================= */
+
+@media (min-width: 1200px) {
+main {
+    width: min(1400px, calc(100% - 80px));
+}
+
+main > section {
+    padding: 30px;
+}
+
+
+}
+
+
+
+/* =========================
+TABLETTE — 768 PX
+========================= */
+
+@media (min-width: 768px) {
+header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px 32px;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    nav {
+        justify-content: flex-end;
+        gap: 6px;
+    }
+
+    nav a {
+        padding: 9px 12px;
+    }
+
+
+}
+
+
+@media (max-width: 1000px) {
+    main {
+        width: min(100% - 32px, 900px);
+
+        padding-top: 30px;
+    }
+
+#empruntForm {
+    grid-template-columns: 1fr 1fr;
+}
+
+#empruntForm button[type="submit"] {
+    width: 100%;
+
+    grid-column: 1 / -1;
+}
+}
+
+main > section {
+    padding: 24px;
+}
+
+/* =========================
+768 PX — TABLETTE
+========================= */
+
+@media (max-width: 768px) {
+#empruntForm {
+    grid-template-columns: 1fr;
+}
+
+#empruntForm button[type="submit"] {
+    grid-column: auto;
+}
+
+main > section:nth-child(3) {
+    align-items: stretch;
+}
+
+#allButton,
+#currentButton,
+#overdueButton {
+    flex: 1;
+}
+
+main > section:last-child {
+    overflow-x: auto;
+}
+
+table {
+    min-width: 1050px;
+}
+
+
+}
+
+/* =========================
+375 PX — TÉLÉPHONE
+========================= */
+
+@media (max-width: 600px) {
+header {
+    padding: 18px 16px;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+nav {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 100%;
+
+    gap: 5px;
+}
+
+nav a {
+    padding: 9px 8px;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+main {
+    width: calc(100% - 20px);
+
+    padding: 24px 0 40px;
+
+    gap: 16px;
+}
+
+main > section {
+    padding: 20px;
+}
+
+main > section:first-child {
+    padding: 0 4px;
+}
+
+main > section:first-child h2 {
+    font-size: 24px;
+}
+
+main section h2 {
+    font-size: 18px;
+}
+
+
+/* Formulaire */
+
+#empruntForm {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 15px;
+}
+
+#empruntForm > div {
+    width: 100%;
+}
+
+#empruntForm button[type="submit"] {
+    width: 100%;
+
+    margin-top: 2px;
+}
+
+
+/* Filtres */
+
+main > section:nth-child(3) {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 8px;
+}
+
+main > section:nth-child(3) h2 {
+    margin-bottom: 8px;
+}
+
+#allButton,
+#currentButton,
+#overdueButton {
+    width: 100%;
+}
+
+
+/* Tableau */
+
+main > section:last-child {
+    overflow-x: auto;
+}
+
+table {
+    min-width: 1050px;
+}
+
+th,
+td {
+    padding: 12px;
+}
+
+
+}
+
+/* =========================
+TRÈS PETITS ÉCRANS
+========================= */
+
+@media (max-width: 375px) {
+header h1 {
+    font-size: 18px;
+}
+
+nav a {
+    font-size: 12px;
+}
+
+main {
+    width: calc(100% - 16px);
+}
+
+main > section {
+    padding: 16px;
+}
+
+main > section:first-child h2 {
+    font-size: 22px;
+}
+
+}

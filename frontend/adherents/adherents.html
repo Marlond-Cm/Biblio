@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Adhérents - Bibliothèque-Mayela</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="adherents.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>Bibliothèque-Mayela</h1>
+
+            <nav>
+                <a href="../livres/livres.html">Livres</a>
+                <a href="../auteurs/auteurs.html">Auteurs</a>
+                <a href="../adherents/adherents.html">Adhérents</a>
+                <a href="../emprunts/emprunts.html">Emprunts</a>
+                <a href="../dashboard/dashboard.html">Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             TITRE + MESSAGES
+        ========================== -->
+
+        <section>
+
+            <h2>Gestion des adhérents</h2>
+
+            <div id="message"></div>
+
+        </section>
+
+
+        <!-- =========================
+             FORMULAIRE
+        ========================== -->
+
+        <section>
+
+            <h2 id="formTitle">
+                Ajouter un adhérent
+            </h2>
+
+            <form id="adherentForm">
+
+                <input
+                    type="hidden"
+                    id="adherentId"
+                >
+
+
+                <div>
+
+                    <label for="nom">
+                        Nom
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nom"
+                        maxlength="150"
+                        required
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label for="contact">
+                        Contact
+                    </label>
+
+                    <input
+                        type="text"
+                        id="contact"
+                        maxlength="150"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="submitButton"
+                >
+                    Ajouter l'adhérent
+                </button>
+
+
+                <button
+                    type="button"
+                    id="cancelButton"
+                    hidden
+                >
+                    Annuler
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================
+             LISTE
+        ========================== -->
+
+        <section>
+
+            <h2>Liste des adhérents</h2>
+
+            <div id="loading">
+                Chargement...
+            </div>
+
+
+            <div>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Contact</th>
+                            <th>Actions</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="adherentsTableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HISTORIQUE
+        ========================== -->
+
+        <section id="historiqueSection" hidden>
+
+            <h2>
+                Historique des emprunts
+            </h2>
+
+            <p id="historiqueAdherent"></p>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Livre</th>
+                        <th>Auteur</th>
+                        <th>Date d'emprunt</th>
+                        <th>Retour prévu</th>
+                        <th>Retour effectif</th>
+                        <th>Statut</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="historiqueTableBody">
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <script src="../JS/api.js"></script>
+    <script src="adherents.js"></script>
+
+</body>
+
+</html>

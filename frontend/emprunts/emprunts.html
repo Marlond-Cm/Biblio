@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emprunts - Bibliothèque-Mayela</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="emprunts.css">
+</head>
+
+<body>
+
+    <header>
+
+       <h1>Bibliothèque-Mayela</h1>
+       
+        <nav>
+            <a href="../livres/livres.html">Livres</a>
+            <a href="../auteurs/auteurs.html">Auteurs</a>
+            <a href="../adherents/adherents.html">Adhérents</a>
+            <a href="../emprunts/emprunts.html">Emprunts</a>
+            <a href="../dashboard/dashboard.html">Dashboard</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             TITRE
+        ========================== -->
+
+        <section>
+
+            <h2>Gestion des emprunts</h2>
+
+            <div id="message"></div>
+
+        </section>
+
+
+        <!-- =========================
+             NOUVEL EMPRUNT
+        ========================== -->
+
+        <section>
+
+            <h2>Enregistrer un emprunt</h2>
+
+            <form id="empruntForm">
+
+                <div>
+
+                    <label for="adherentId">
+                        Adhérent
+                    </label>
+
+                    <select
+                        id="adherentId"
+                        required
+                    >
+
+                        <option value="">
+                            Sélectionner un adhérent
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label for="livreId">
+                        Livre
+                    </label>
+
+                    <select
+                        id="livreId"
+                        required
+                    >
+
+                        <option value="">
+                            Sélectionner un livre
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label for="dateRetourPrevue">
+                        Date de retour prévue
+                    </label>
+
+                    <input
+                        type="date"
+                        id="dateRetourPrevue"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit">
+                    Enregistrer l'emprunt
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- =========================
+             FILTRES
+        ========================== -->
+
+        <section>
+
+            <h2>Filtrer les emprunts</h2>
+
+            <button
+                type="button"
+                id="allButton"
+            >
+                Tous
+            </button>
+
+            <button
+                type="button"
+                id="currentButton"
+            >
+                En cours
+            </button>
+
+            <button
+                type="button"
+                id="overdueButton"
+            >
+                En retard
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             LISTE
+        ========================== -->
+
+        <section>
+
+            <h2 id="listeTitle">
+                Tous les emprunts
+            </h2>
+
+            <div id="loading">
+                Chargement...
+            </div>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Adhérent</th>
+                        <th>Livre</th>
+                        <th>Auteur</th>
+                        <th>Emprunt</th>
+                        <th>Retour prévu</th>
+                        <th>Retour effectif</th>
+                        <th>Statut</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="empruntsTableBody">
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <script src="../JS/api.js"></script>
+    <script src="emprunts.js"></script>
+
+</body>
+
+</html>

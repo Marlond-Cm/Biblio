@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --couleur-principale: #2563eb;
+    --couleur-principale-hover: #1d4ed8;
+    --couleur-secondaire: #0f172a;
+
+    --couleur-succes: #16a34a;
+    --couleur-danger: #dc2626;
+    --couleur-warning: #d97706;
+
+    --couleur-fond: #f1f5f9;
+    --couleur-surface: #ffffff;
+    --couleur-bordure: #e2e8f0;
+
+    --couleur-texte: #0f172a;
+    --couleur-texte-secondaire: #64748b;
+
+    --ombre-legere: 0 2px 8px rgba(15, 23, 42, 0.08);
+    --ombre-moyenne: 0 8px 24px rgba(15, 23, 42, 0.10);
+
+    --rayon: 10px;
+    --transition: 0.2s ease;
+}
+
+
+/* ============================== RESET ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--couleur-fond);
+    color: var(--couleur-texte);
+    font-family: "Poppins", Georgia, sans-serif;
+    line-height: 1.6;
+}
+
+/* ================================ HEADER =========================================== */
+
+header {
+    width: 100%;
+    background-color: var(--couleur-secondaire);
+    color: var(--couleur-surface);
+    padding: 20px 16px;
+    box-shadow: var(--ombre-moyenne);
+}
+
+header h1 {
+    margin-bottom: 16px;
+    color: var(--couleur-surface);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+nav a {
+    display: block;
+    padding: 9px 12px;
+    border-radius: 8px;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition:
+        background-color var(--transition),
+        color var(--transition);
+}
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--couleur-surface);
+}
+
+nav a:focus {
+    outline: 2px solid var(--couleur-principale);
+    outline-offset: 2px;
+}

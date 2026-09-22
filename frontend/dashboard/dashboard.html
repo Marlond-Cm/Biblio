@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard - Bibliothèque-Mayela</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <h1>Bibliothèque-Mayela</h1>
+        
+        <nav>
+            <a href="../livres/livres.html">Livres</a>
+            <a href="../auteurs/auteurs.html">Auteurs</a>
+            <a href="../adherents/adherents.html">Adhérents</a>
+            <a href="../emprunts/emprunts.html">Emprunts</a>
+            <a href="../dashboard/dashboard.html">Dashboard</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             TITRE
+        ========================== -->
+
+        <section>
+
+            <h2>
+                Tableau de bord
+            </h2>
+
+            <div id="message"></div>
+
+        </section>
+
+
+        <!-- =========================
+             STATISTIQUES
+        ========================== -->
+
+        <section>
+
+            <h2>
+                Vue générale
+            </h2>
+
+
+            <div class="stats-grid">
+
+                <article class="stat-card">
+
+                    <h3>
+                        Total livres
+                    </h3>
+
+                    <p id="totalLivres">
+                        -
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <h3>
+                        Total adhérents
+                    </h3>
+
+                    <p id="totalAdherents">
+                        -
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <h3>
+                        Emprunts en cours
+                    </h3>
+
+                    <p id="empruntsEnCours">
+                        -
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <h3>
+                        Emprunts en retard
+                    </h3>
+
+                    <p id="empruntsEnRetard">
+                        -
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             TOP STATISTIQUES
+        ========================== -->
+
+        <section>
+
+            <h2>
+                Activité de la bibliothèque
+            </h2>
+
+
+            <div class="dashboard-grid">
+
+                <!-- Livre le plus emprunté -->
+
+                <article class="dashboard-card">
+
+                    <h3>
+                        📚 Livre le plus emprunté
+                    </h3>
+
+                    <div id="livrePlusEmprunte">
+
+                        Chargement...
+
+                    </div>
+
+                </article>
+
+
+                <!-- Adhérent le plus actif -->
+
+                <article class="dashboard-card">
+
+                    <h3>
+                        👤 Adhérent le plus actif
+                    </h3>
+
+                    <div id="adherentPlusActif">
+
+                        Chargement...
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RACCOURCIS
+        ========================== -->
+
+        <section>
+
+            <h2>
+                Accès rapides
+            </h2>
+
+
+            <div class="dashboard-actions">
+
+               
+                <a href="../livres/livres.html">Livres</a>
+                
+                <a href="../auteurs/auteurs.html">Auteurs</a>
+                
+                <a href="../adherents/adherents.html">Adhérents</a>
+                
+                <a href="../emprunts/emprunts.html">Emprunts</a>
+                
+            
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../JS/api.js"></script>
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Livres - Bibliothèque-Mayela</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="livres.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Bibliothèque-Mayela</h1>
+
+        <nav>
+            <a href="../livres/livres.html">Livres</a>
+            <a href="../auteurs/auteurs.html">Auteurs</a>
+            <a href="../adherents/adherents.html">Adhérents</a>
+            <a href="../emprunts/emprunts.html">Emprunts</a>
+            <a href="../dashboard/dashboard.html">Dashboard</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section>
+            <h2>Gestion des livres</h2>
+
+            <div id="message"></div>
+
+            <div>
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Rechercher un livre ou un auteur..."
+                >
+
+                <button id="searchButton">
+                    Rechercher
+                </button>
+
+                <button id="resetButton">
+                    Réinitialiser
+                </button>
+            </div>
+        </section>
+
+
+        <section>
+
+            <h2>Ajouter un livre</h2>
+
+            <form id="livreForm">
+
+                <input
+                    type="hidden"
+                    id="livreId"
+                >
+
+                <div>
+                    <label for="titre">
+                        Titre
+                    </label>
+
+                    <input
+                        type="text"
+                        id="titre"
+                        maxlength="255"
+                        required
+                    >
+                </div>
+
+
+                <div>
+                    <label for="auteurId">
+                        Auteur
+                    </label>
+
+                    <select
+                        id="auteurId"
+                        required
+                    >
+                        <option value="">
+                            Sélectionner un auteur
+                        </option>
+                    </select>
+                </div>
+
+
+                <div>
+                    <label for="anneePublication">
+                        Année de publication
+                    </label>
+
+                    <input
+                        type="number"
+                        id="anneePublication"
+                        min="1000"
+                        max="2100"
+                    >
+                </div>
+
+
+                <button type="submit" id="submitButton">
+                    Ajouter le livre
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelButton"
+                    hidden
+                >
+                    Annuler
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section>
+
+            <h2>Liste des livres</h2>
+
+            <div id="loading">
+                Chargement...
+            </div>
+
+            <div id="tableContainer">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Titre</th>
+                            <th>Auteur</th>
+                            <th>Année</th>
+                            <th>Statut</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="livresTableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <section id="pagination">
+
+            <button id="previousButton">
+                ← Précédent
+            </button>
+
+            <span id="paginationInfo">
+                Page 1
+            </span>
+
+            <button id="nextButton">
+                Suivant →
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="../JS/api.js"></script>
+    <script src="livres.js"></script>
+
+</body>
+
+</html>
+

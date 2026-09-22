@@ -1,0 +1,618 @@
+:root {
+
+    --couleur-principale: #2563eb;
+    --couleur-principale-hover: #1d4ed8;
+    --couleur-secondaire: #0f172a;
+
+    --couleur-succes: #16a34a;
+    --couleur-danger: #dc2626;
+    --couleur-warning: #d97706;
+
+    --couleur-fond: #f1f5f9;
+    --couleur-surface: #ffffff;
+    --couleur-bordure: #e2e8f0;
+
+    --couleur-texte: #0f172a;
+    --couleur-texte-secondaire: #64748b;
+
+    --ombre-legere: 0 2px 8px rgba(15, 23, 42, 0.08);
+    --ombre-moyenne: 0 8px 24px rgba(15, 23, 42, 0.10);
+
+    --rayon: 10px;
+    --transition: 0.2s ease;
+
+
+}
+
+
+
+
+/* =========================
+CONTENU PRINCIPAL
+========================= */
+
+main {
+    width: min(1200px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    padding: 40px 0 60px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+
+}
+
+/* =========================
+SECTIONS
+========================= */
+
+main > section {
+    background-color: var(--couleur-surface);
+
+    border: 1px solid var(--couleur-bordure);
+    border-radius: var(--rayon);
+
+    padding: 28px;
+
+    box-shadow: var(--ombre-legere);
+
+
+}
+
+main > section:first-child {
+    background-color: transparent;
+
+    border: 0;
+    box-shadow: none;
+
+    padding: 0 4px;
+
+
+}
+
+main section h2 {
+    margin: 0 0 20px;
+
+    color: var(--couleur-texte);
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+
+
+}
+
+main > section:first-child h2 {
+    margin-bottom: 14px;
+
+    font-size: 28px;
+    letter-spacing: -0.5px;
+
+
+}
+
+/* =========================
+MESSAGES
+========================= */
+
+#message {
+    min-height: 0;
+
+    padding: 0;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        padding var(--transition),
+        margin var(--transition);
+
+
+}
+
+#message.success {
+    margin-top: 12px;
+    padding: 12px 15px;
+
+    color: #166534;
+    background-color: #dcfce7;
+
+    border: 1px solid #bbf7d0;
+
+
+}
+
+#message.error {
+    margin-top: 12px;
+    padding: 12px 15px;
+
+    color: #991b1b;
+    background-color: #fee2e2;
+
+    border: 1px solid #fecaca;
+
+
+}
+
+/* =========================
+FORMULAIRE
+========================= */
+
+#auteurForm {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr auto auto;
+
+    align-items: end;
+
+    gap: 18px;
+
+
+}
+
+#auteurForm > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+#auteurForm label {
+    color: var(--couleur-texte);
+
+    font-size: 14px;
+    font-weight: 600;
+
+
+}
+
+#auteurForm input[type="text"] {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 13px;
+
+    color: var(--couleur-texte);
+    background-color: var(--couleur-surface);
+
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+
+
+}
+
+#auteurForm input[type="text"]:hover {
+    border-color: #cbd5e1;
+    }
+
+    #auteurForm input[type="text"]:focus {
+    border-color: var(--couleur-principale);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+
+
+}
+
+/* =========================
+BOUTONS
+========================= */
+
+    button {
+    min-height: 44px;
+
+    padding: 0 16px;
+
+    border: 0;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        box-shadow var(--transition),
+        transform var(--transition);
+
+
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:focus-visible {
+    outline: 2px solid var(--couleur-principale);
+    outline-offset: 2px;
+}
+
+#submitButton {
+    color: var(--couleur-surface);
+    background-color: var(--couleur-principale);
+
+    white-space: nowrap;
+
+
+}
+
+#submitButton:hover {
+    background-color: var(--couleur-principale-hover);
+
+    box-shadow:
+        0 4px 10px rgba(37, 99, 235, 0.20);
+
+
+}
+
+#cancelButton {
+    color: var(--couleur-texte-secondaire);
+    background-color: #f8fafc;
+
+    border: 1px solid var(--couleur-bordure);
+
+    white-space: nowrap;
+
+
+}
+
+#cancelButton:hover {
+    color: var(--couleur-texte);
+    background-color: #e2e8f0;
+}
+
+/* =========================
+CHARGEMENT
+========================= */
+
+#loading {
+    margin-bottom: 14px;
+
+    color: var(--couleur-texte-secondaire);
+
+    font-size: 14px;
+
+
+}
+
+/* =========================
+TABLEAU
+========================= */
+
+main > section:last-child {
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 14px;
+
+
+}
+
+thead {
+    background-color: #f8fafc;
+}
+
+th {
+    padding: 13px 16px;
+
+    color: var(--couleur-texte-secondaire);
+
+    border-bottom: 1px solid var(--couleur-bordure);
+
+    text-align: left;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+
+
+}
+
+td {
+    padding: 14px 16px;
+
+    color: var(--couleur-texte);
+
+    border-bottom: 1px solid var(--couleur-bordure);
+
+    vertical-align: middle;
+
+
+}
+
+tbody tr {
+    transition: background-color var(--transition);
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* =========================
+COLONNE ACTIONS
+========================= */
+
+td:last-child {
+    white-space: nowrap;
+}
+
+td:last-child button {
+    min-height: 36px;
+
+    padding: 0 12px;
+
+    font-size: 13px;
+
+
+}
+
+td:last-child button:first-child {
+    color: var(--couleur-principale);
+    background-color: #eff6ff;
+
+    margin-right: 6px;
+
+
+}
+
+td:last-child button:first-child:hover {
+    color: var(--couleur-surface);
+    background-color: var(--couleur-principale);
+}
+
+td:last-child button:last-child {
+    color: var(--couleur-danger);
+    background-color: #fef2f2;
+}
+
+td:last-child button:last-child:hover {
+    color: var(--couleur-surface);
+    background-color: var(--couleur-danger);
+}
+
+/* =========================
+LIGNE VIDE
+========================= */
+
+tbody tr td[colspan] {
+    padding: 32px 16px;
+
+    color: var(--couleur-texte-secondaire);
+
+    text-align: center;
+
+    font-style: italic;
+
+
+}
+
+/* =========================
+1440 PX — ORDINATEUR
+========================= */
+
+@media (min-width: 1200px) {
+main {
+    width: min(1200px, calc(100% - 80px));
+}
+
+main > section {
+    padding: 30px;
+}
+
+
+}
+
+/* =========================
+768 PX — TABLETTE
+========================= */
+
+@media (min-width: 768px) {
+header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px 32px;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    nav {
+        justify-content: flex-end;
+        gap: 6px;
+    }
+
+    nav a {
+        padding: 9px 12px;
+    }
+
+main {
+    width: min(100% - 32px, 720px);
+
+    padding-top: 30px;
+}
+
+#auteurForm {
+    grid-template-columns: 1fr 1fr;
+}
+
+#submitButton,
+#cancelButton {
+    width: 100%;
+}
+
+#submitButton {
+    grid-column: 1;
+}
+
+#cancelButton {
+    grid-column: 2;
+}
+
+main > section {
+    padding: 24px;
+}
+
+
+}
+
+/* =========================
+375 PX — TÉLÉPHONE
+========================= */
+
+@media (max-width: 600px) {
+header {
+    padding: 18px 16px;
+}
+
+header h1 {
+    font-size: 20px;
+}
+
+nav {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    width: 100%;
+
+    gap: 5px;
+}
+
+nav a {
+    padding: 9px 8px;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+main {
+    width: calc(100% - 20px);
+
+    padding: 24px 0 40px;
+
+    gap: 16px;
+}
+
+main > section {
+    padding: 20px;
+}
+
+main > section:first-child {
+    padding: 0 4px;
+}
+
+main > section:first-child h2 {
+    font-size: 24px;
+}
+
+main section h2 {
+    font-size: 18px;
+}
+
+#auteurForm {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 15px;
+}
+
+#auteurForm > div {
+    width: 100%;
+}
+
+#submitButton,
+#cancelButton {
+    width: 100%;
+
+    margin-top: 2px;
+}
+
+/*
+   Le tableau reste accessible sur petit écran
+   grâce au défilement horizontal.
+*/
+main > section:last-child {
+    overflow-x: auto;
+}
+
+table {
+    min-width: 620px;
+}
+
+th,
+td {
+    padding: 12px;
+}
+
+td:last-child button {
+    min-height: 34px;
+
+    padding: 0 10px;
+}
+
+
+}
+
+/* =========================
+TRÈS PETITS ÉCRANS
+========================= */
+
+@media (max-width: 375px) {
+header h1 {
+font-size: 18px;
+}
+
+nav a {
+    font-size: 12px;
+}
+
+main {
+    width: calc(100% - 16px);
+}
+
+main > section {
+    padding: 16px;
+}
+
+main > section:first-child h2 {
+    font-size: 22px;
+}
+
+
+}

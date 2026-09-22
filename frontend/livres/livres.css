@@ -1,0 +1,735 @@
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --couleur-principale: #2563eb;
+    --couleur-principale-hover: #1d4ed8;
+    --couleur-secondaire: #0f172a;
+
+    --couleur-succes: #16a34a;
+    --couleur-danger: #dc2626;
+    --couleur-warning: #d97706;
+
+    --couleur-fond: #f1f5f9;
+    --couleur-surface: #ffffff;
+    --couleur-bordure: #e2e8f0;
+
+    --couleur-texte: #0f172a;
+    --couleur-texte-secondaire: #64748b;
+
+    --ombre-legere: 0 2px 8px rgba(15, 23, 42, 0.08);
+    --ombre-moyenne: 0 8px 24px rgba(15, 23, 42, 0.10);
+
+    --rayon: 10px;
+    --transition: 0.2s ease;
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+}
+
+main > section {
+    margin-bottom: 28px;
+}
+
+main > section > h2 {
+    margin-bottom: 16px;
+    color: var(--couleur-secondaire);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MESSAGES
+========================================================= */
+
+#message {
+    margin-top: 10px;
+    border-radius: var(--rayon);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+#message.success {
+    padding: 12px 14px;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: var(--couleur-succes);
+}
+
+#message.error {
+    padding: 12px 14px;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: var(--couleur-danger);
+}
+
+#message.warning {
+    padding: 12px 14px;
+    background-color: #fffbeb;
+    border: 1px solid #fde68a;
+    color: var(--couleur-warning);
+}
+
+
+/* =========================================================
+   RECHERCHE
+========================================================= */
+
+main > section:first-child > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+    padding: 16px;
+    background-color: var(--couleur-surface);
+    border: 1px solid var(--couleur-bordure);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre-legere);
+}
+
+#searchInput {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 13px;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 8px;
+    background-color: var(--couleur-surface);
+    color: var(--couleur-texte);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+#searchInput::placeholder {
+    color: #94a3b8;
+}
+
+#searchInput:hover {
+    border-color: #cbd5e1;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--couleur-principale);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================================
+   BOUTONS
+========================================================= */
+
+#searchButton,
+#resetButton,
+#submitButton,
+#cancelButton,
+#previousButton,
+#nextButton {
+    min-height: 44px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+
+/* Bouton rechercher */
+
+#searchButton {
+    border: 1px solid var(--couleur-principale);
+    background-color: var(--couleur-principale);
+    color: var(--couleur-surface);
+}
+
+#searchButton:hover {
+    background-color: var(--couleur-principale-hover);
+    border-color: var(--couleur-principale-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--ombre-legere);
+}
+
+
+/* Bouton réinitialiser */
+
+#resetButton {
+    border: 1px solid var(--couleur-bordure);
+    background-color: var(--couleur-surface);
+    color: var(--couleur-texte-secondaire);
+}
+
+#resetButton:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+    color: var(--couleur-texte);
+}
+
+
+/* Focus boutons */
+
+#searchButton:focus,
+#resetButton:focus,
+#submitButton:focus,
+#cancelButton:focus,
+#previousButton:focus,
+#nextButton:focus {
+    outline: 2px solid var(--couleur-principale);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   FORMULAIRE LIVRE
+========================================================= */
+
+#livreForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+    background-color: var(--couleur-surface);
+    border: 1px solid var(--couleur-bordure);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre-legere);
+}
+
+#livreForm > div {
+    width: 100%;
+}
+
+#livreForm label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--couleur-texte);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#livreForm input[type="text"],
+#livreForm input[type="number"],
+#livreForm select {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 8px;
+    background-color: var(--couleur-surface);
+    color: var(--couleur-texte);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+#livreForm input[type="text"]:hover,
+#livreForm input[type="number"]:hover,
+#livreForm select:hover {
+    border-color: #cbd5e1;
+}
+
+#livreForm input[type="text"]:focus,
+#livreForm input[type="number"]:focus,
+#livreForm select:focus {
+    outline: none;
+    border-color: var(--couleur-principale);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================================
+   BOUTONS FORMULAIRE
+========================================================= */
+
+#submitButton {
+    border: 1px solid var(--couleur-principale);
+    background-color: var(--couleur-principale);
+    color: var(--couleur-surface);
+}
+
+#submitButton:hover {
+    background-color: var(--couleur-principale-hover);
+    border-color: var(--couleur-principale-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--ombre-legere);
+}
+
+#cancelButton {
+    border: 1px solid var(--couleur-bordure);
+    background-color: var(--couleur-surface);
+    color: var(--couleur-texte-secondaire);
+}
+
+#cancelButton:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+    color: var(--couleur-texte);
+}
+
+
+/* =========================================================
+   CHARGEMENT
+========================================================= */
+
+#loading {
+    margin-bottom: 12px;
+    color: var(--couleur-texte-secondaire);
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   CONTENEUR DU TABLEAU
+========================================================= */
+
+#tableContainer {
+    width: 100%;
+    overflow-x: auto;
+    background-color: var(--couleur-surface);
+    border: 1px solid var(--couleur-bordure);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre-legere);
+}
+
+
+/* =========================================================
+   TABLEAU
+========================================================= */
+
+table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    background-color: var(--couleur-surface);
+}
+
+thead {
+    background-color: #f8fafc;
+}
+
+th {
+    padding: 13px 14px;
+    border-bottom: 1px solid var(--couleur-bordure);
+    color: var(--couleur-secondaire);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+}
+
+td {
+    padding: 13px 14px;
+    border-bottom: 1px solid var(--couleur-bordure);
+    color: var(--couleur-texte-secondaire);
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+tbody tr {
+    transition: background-color var(--transition);
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   ACTIONS DU TABLEAU
+========================================================= */
+
+td button {
+    margin: 2px;
+    padding: 7px 10px;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 7px;
+    background-color: var(--couleur-surface);
+    color: var(--couleur-texte);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color var(--transition),
+        border-color var(--transition),
+        color var(--transition);
+}
+
+td button:hover {
+    background-color: #eff6ff;
+    border-color: #93c5fd;
+    color: var(--couleur-principale);
+}
+
+td button:focus {
+    outline: 2px solid var(--couleur-principale);
+    outline-offset: 1px;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+#pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 24px;
+    margin-bottom: 0;
+}
+
+#paginationInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 8px 14px;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 8px;
+    background-color: var(--couleur-surface);
+    color: var(--couleur-texte);
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: var(--ombre-legere);
+}
+
+#previousButton,
+#nextButton {
+    border: 1px solid var(--couleur-bordure);
+    background-color: var(--couleur-surface);
+    color: var(--couleur-texte);
+}
+
+#previousButton:hover:not(:disabled),
+#nextButton:hover:not(:disabled) {
+    border-color: var(--couleur-principale);
+    background-color: #eff6ff;
+    color: var(--couleur-principale);
+}
+
+#previousButton:disabled,
+#nextButton:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ÉLÉMENTS CACHÉS
+========================================================= */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   TÉLÉPHONE — 375px
+========================================================= */
+
+@media (min-width: 375px) {
+
+    header {
+        padding: 22px 20px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        gap: 6px;
+    }
+
+    nav a {
+        padding: 9px 13px;
+    }
+
+    main {
+        padding: 28px 20px 44px;
+    }
+
+    main > section {
+        margin-bottom: 32px;
+    }
+
+    main > section > h2 {
+        font-size: 1.35rem;
+    }
+
+    main > section:first-child > div:last-child {
+        padding: 18px;
+    }
+
+    #livreForm {
+        padding: 22px;
+    }
+
+    #livreForm input[type="text"],
+    #livreForm input[type="number"],
+    #livreForm select {
+        min-height: 48px;
+    }
+
+    #submitButton,
+    #cancelButton,
+    #searchButton,
+    #resetButton {
+        min-height: 48px;
+    }
+
+    #pagination {
+        gap: 12px;
+    }
+}
+
+
+/* =========================================================
+   TABLETTE — 768px
+========================================================= */
+
+@media (min-width: 768px) {
+
+    header {
+        padding: 18px 32px;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    nav {
+        justify-content: flex-end;
+        gap: 6px;
+    }
+
+    nav a {
+        padding: 9px 12px;
+    }
+
+    main {
+        padding: 36px 32px 50px;
+    }
+
+    main > section > h2 {
+        font-size: 1.4rem;
+    }
+
+
+    /* Recherche */
+
+    main > section:first-child > div:last-child {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #searchInput {
+        flex: 1;
+        min-width: 0;
+    }
+
+    #searchButton,
+    #resetButton {
+        width: auto;
+        white-space: nowrap;
+    }
+
+
+    /* Formulaire */
+
+    #livreForm {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        align-items: end;
+        padding: 24px;
+    }
+
+    #livreForm > div {
+        min-width: 0;
+    }
+
+    #submitButton,
+    #cancelButton {
+        width: auto;
+        min-width: 150px;
+    }
+
+    #submitButton {
+        justify-self: start;
+    }
+
+    #cancelButton {
+        justify-self: start;
+    }
+
+
+    /* Tableau */
+
+    table {
+        min-width: 900px;
+    }
+
+    th,
+    td {
+        padding: 14px 16px;
+    }
+
+
+    /* Pagination */
+
+    #pagination {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 14px;
+    }
+
+    #paginationInfo {
+        min-height: 44px;
+    }
+
+    #previousButton,
+    #nextButton {
+        width: auto;
+        min-width: 130px;
+    }
+}
+
+
+/* =========================================================
+   ORDINATEUR — 1440px
+========================================================= */
+
+@media (min-width: 1440px) {
+
+    header {
+        padding: 20px 48px;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
+
+    main {
+        padding: 44px 48px 60px;
+    }
+
+    main > section {
+        margin-bottom: 38px;
+    }
+
+    main > section > h2 {
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+    }
+
+
+    /* Recherche */
+
+    main > section:first-child > div:last-child {
+        padding: 20px;
+    }
+
+    #searchInput {
+        min-height: 48px;
+    }
+
+    #searchButton,
+    #resetButton {
+        min-height: 48px;
+    }
+
+
+    /* Formulaire */
+
+    #livreForm {
+        grid-template-columns: 1.6fr 1.2fr 0.8fr auto auto;
+        gap: 16px;
+        padding: 26px;
+    }
+
+    #livreForm input[type="text"],
+    #livreForm input[type="number"],
+    #livreForm select {
+        min-height: 48px;
+    }
+
+    #submitButton,
+    #cancelButton {
+        min-height: 48px;
+        white-space: nowrap;
+    }
+
+
+    /* Tableau */
+
+    table {
+        min-width: 0;
+    }
+
+    th {
+        padding: 15px 18px;
+        font-size: 0.9rem;
+    }
+
+    td {
+        padding: 15px 18px;
+        font-size: 0.92rem;
+    }
+
+    td button {
+        padding: 8px 11px;
+        font-size: 0.82rem;
+    }
+
+
+    /* Pagination */
+
+    #pagination {
+        margin-top: 28px;
+    }
+}

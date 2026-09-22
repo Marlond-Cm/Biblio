@@ -1,0 +1,539 @@
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --couleur-principale: #2563eb;
+    --couleur-principale-hover: #1d4ed8;
+    --couleur-secondaire: #0f172a;
+
+    --couleur-succes: #16a34a;
+    --couleur-danger: #dc2626;
+    --couleur-warning: #d97706;
+
+    --couleur-fond: #f1f5f9;
+    --couleur-surface: #ffffff;
+    --couleur-bordure: #e2e8f0;
+
+    --couleur-texte: #0f172a;
+    --couleur-texte-secondaire: #64748b;
+
+    --ombre-legere: 0 2px 8px rgba(15, 23, 42, 0.08);
+    --ombre-moyenne: 0 8px 24px rgba(15, 23, 42, 0.10);
+
+    --rayon: 10px;
+    --transition: 0.2s ease;
+}
+
+
+
+/* =====================  MAIN =============================== */
+
+main {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+}
+
+main > section {
+    margin-bottom: 28px;
+}
+
+main > section > h2 {
+    margin-bottom: 16px;
+    color: var(--couleur-secondaire);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MESSAGES
+========================================================= */
+
+#message {
+    margin-top: 10px;
+    border-radius: var(--rayon);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+#message.success {
+    padding: 12px 14px;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: var(--couleur-succes);
+}
+
+#message.error {
+    padding: 12px 14px;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    color: var(--couleur-danger);
+}
+
+#message.warning {
+    padding: 12px 14px;
+    background-color: #fffbeb;
+    border: 1px solid #fde68a;
+    color: var(--couleur-warning);
+}
+
+
+/* =========================================================
+   FORMULAIRE
+========================================================= */
+
+#adherentForm {
+    padding: 20px;
+    background-color: var(--couleur-surface);
+    border: 1px solid var(--couleur-bordure);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre-legere);
+}
+
+#adherentForm > div {
+    margin-bottom: 16px;
+}
+
+#adherentForm label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--couleur-texte);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#adherentForm input[type="text"] {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 8px;
+    background-color: var(--couleur-surface);
+    color: var(--couleur-texte);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+#adherentForm input[type="text"]:hover {
+    border-color: #cbd5e1;
+}
+
+#adherentForm input[type="text"]:focus {
+    outline: none;
+    border-color: var(--couleur-principale);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =========================================================
+   BOUTONS DU FORMULAIRE
+========================================================= */
+
+#adherentForm button {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 4px;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color var(--transition),
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+#submitButton {
+    background-color: var(--couleur-principale);
+    border-color: var(--couleur-principale);
+    color: var(--couleur-surface);
+}
+
+#submitButton:hover {
+    background-color: var(--couleur-principale-hover);
+    border-color: var(--couleur-principale-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--ombre-legere);
+}
+
+#submitButton:focus {
+    outline: 2px solid var(--couleur-principale);
+    outline-offset: 2px;
+}
+
+#cancelButton {
+    margin-top: 10px;
+    background-color: var(--couleur-surface);
+    border-color: var(--couleur-bordure);
+    color: var(--couleur-texte-secondaire);
+}
+
+#cancelButton:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+    color: var(--couleur-texte);
+}
+
+#cancelButton:focus {
+    outline: 2px solid #94a3b8;
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   CHARGEMENT
+========================================================= */
+
+#loading {
+    margin-bottom: 12px;
+    color: var(--couleur-texte-secondaire);
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   TABLEAUX
+========================================================= */
+
+main > section > div:has(table) {
+    width: 100%;
+    overflow-x: auto;
+    background-color: var(--couleur-surface);
+    border: 1px solid var(--couleur-bordure);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre-legere);
+}
+
+table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    background-color: var(--couleur-surface);
+}
+
+thead {
+    background-color: #f8fafc;
+}
+
+th {
+    padding: 13px 14px;
+    border-bottom: 1px solid var(--couleur-bordure);
+    color: var(--couleur-secondaire);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+}
+
+td {
+    padding: 13px 14px;
+    border-bottom: 1px solid var(--couleur-bordure);
+    color: var(--couleur-texte-secondaire);
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr {
+    transition: background-color var(--transition);
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+
+/* =========================================================
+   BOUTONS D'ACTIONS DU TABLEAU
+========================================================= */
+
+td button {
+    margin: 3px;
+    padding: 7px 10px;
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 7px;
+    background-color: var(--couleur-surface);
+    color: var(--couleur-texte);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color var(--transition),
+        border-color var(--transition),
+        color var(--transition);
+}
+
+td button:hover {
+    background-color: #eff6ff;
+    border-color: #93c5fd;
+    color: var(--couleur-principale);
+}
+
+td button:focus {
+    outline: 2px solid var(--couleur-principale);
+    outline-offset: 1px;
+}
+
+
+/* =========================================================
+   HISTORIQUE
+========================================================= */
+
+#historiqueSection {
+    padding-top: 4px;
+}
+
+#historiqueAdherent {
+    margin-bottom: 14px;
+    padding: 12px 14px;
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: var(--rayon);
+    color: #1e40af;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ÉTAT CACHÉ
+========================================================= */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   TÉLÉPHONE — 375px
+========================================================= */
+
+@media (min-width: 375px) {
+
+    header {
+        padding: 22px 20px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        gap: 6px;
+    }
+
+    nav a {
+        padding: 9px 13px;
+    }
+
+    main {
+        padding: 28px 20px 44px;
+    }
+
+    main > section {
+        margin-bottom: 32px;
+    }
+
+    main > section > h2 {
+        font-size: 1.35rem;
+    }
+
+    #adherentForm {
+        padding: 22px;
+    }
+
+    #adherentForm input[type="text"] {
+        min-height: 48px;
+    }
+
+    #adherentForm button {
+        min-height: 48px;
+    }
+}
+
+
+/* =========================================================
+   TABLETTE — 768px
+========================================================= */
+
+@media (min-width: 768px) {
+
+    header {
+        padding: 18px 32px;
+    }
+
+    header > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    nav {
+        justify-content: flex-end;
+        gap: 6px;
+    }
+
+    nav a {
+        padding: 9px 12px;
+    }
+
+    main {
+        padding: 36px 32px 50px;
+    }
+
+    main > section > h2 {
+        font-size: 1.4rem;
+    }
+
+
+    /* Formulaire */
+
+    #adherentForm {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        align-items: end;
+        padding: 24px;
+    }
+
+    #adherentForm > div {
+        margin-bottom: 0;
+    }
+
+    #submitButton,
+    #cancelButton {
+        width: auto;
+        margin-top: 0;
+    }
+
+    #submitButton {
+        grid-column: 1;
+        justify-self: start;
+    }
+
+    #cancelButton {
+        grid-column: 2;
+        justify-self: start;
+        margin-left: -8px;
+    }
+
+
+    /* Tableau */
+
+    table {
+        min-width: 750px;
+    }
+
+    th,
+    td {
+        padding: 14px 16px;
+    }
+}
+
+
+/* =========================================================
+   ORDINATEUR — 1440px
+========================================================= */
+
+@media (min-width: 1440px) {
+
+    header {
+        padding: 20px 48px;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
+
+    main {
+        padding: 44px 48px 60px;
+    }
+
+    main > section {
+        margin-bottom: 38px;
+    }
+
+    main > section > h2 {
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+    }
+
+
+    /* Formulaire */
+
+    #adherentForm {
+        grid-template-columns: minmax(250px, 1fr) minmax(250px, 1fr) auto auto;
+        gap: 16px;
+        padding: 26px;
+    }
+
+    #adherentForm > div {
+        min-width: 0;
+    }
+
+    #submitButton {
+        grid-column: auto;
+        white-space: nowrap;
+    }
+
+    #cancelButton {
+        grid-column: auto;
+        margin-left: 0;
+        white-space: nowrap;
+    }
+
+
+    /* Tableaux */
+
+    table {
+        min-width: 0;
+    }
+
+    th {
+        padding: 15px 18px;
+        font-size: 0.9rem;
+    }
+
+    td {
+        padding: 15px 18px;
+        font-size: 0.92rem;
+    }
+
+    td button {
+        padding: 8px 11px;
+        font-size: 0.82rem;
+    }
+}
+
+
+
